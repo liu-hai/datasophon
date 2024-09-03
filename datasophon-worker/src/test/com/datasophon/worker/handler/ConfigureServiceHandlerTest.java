@@ -15,16 +15,16 @@ public class ConfigureServiceHandlerTest {
 
     @BeforeAll
     public void setUp() {
-        configureServiceHandlerUnderTest = new ConfigureServiceHandler("HDFS","NameNode");
+        configureServiceHandlerUnderTest = new ConfigureServiceHandler("HDFS", "NameNode");
     }
 
     @Test
     public void testConfigure() {
         // Setup
-        final Map<Generators, List<ServiceConfig>> cofigFileMap = new HashMap<>();
+        final Map<Generators, List<ServiceConfig>> configFileMap = new HashMap<>();
 
         // Run the test
-//        final ExecResult result = configureServiceHandlerUnderTest.configure(cofigFileMap, "decompressPackageName", 0,
+//        final ExecResult result = configureServiceHandlerUnderTest.configure(configFileMap, "decompressPackageName", 0,
 //                "serviceRoleName");
 
         // Verify the results
