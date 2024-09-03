@@ -115,7 +115,7 @@ if [ $(systemctl status mysqld | grep running | wc -l) -eq 1 ]; then
   #mysql -uroot -p"${num1}" -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;"
   #mysql -uroot -p"${num1}" -e "FLUSH PRIVILEGES;"
 
-  /usr/bin/mysqladmin -uroot -p''$tmp_passwd'' password ''$num1''
+  /usr/bin/mysqladmin -uroot -p'exit'$tmp_passwd'' password ''$num1''
   mysql -uroot -p''$num1'' -e "update mysql.user set host='%' where user ='root';"
   mysql -uroot -p''$num1'' -e "FLUSH PRIVILEGES;"
   mysql -uroot -p''$num1'' -e "ALTER USER 'root'@'%' IDENTIFIED BY '$num1' PASSWORD EXPIRE NEVER;"
@@ -138,7 +138,7 @@ max_connections=3600
 
 EOF
 
-  systemctl restart mysqld
+
   echo "install mysql-community-8.0.28-1.el8.x86_64  finished........."
 else
   echo "####################################################################"
